@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KNN Classification Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    
+        h1 {
+            color: #4CAF50;
+        }
+    
+        h4 {
+            color: #1E90FF;
+        }
+    
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    
+        input[type="text"] {
+            width: 200px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            width: 100px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    
+        .malignant {
+            color: red;
+        }
+    
+        .benign {
+            color: green;
+        }
+        li {
+            list-style-type: none;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>Naive Bayes - Midterm, Part 2</h1>
+    <h4>Author:  Daniel Lagos</h4>
+    <p>Model will take input, read, writing and math scores.  A number between 1-100</p>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+        Reading Score:  <input type="text" name="reading_score"></br>
+        Writing Score:  <input type="text" name="writing_score"></br>
+	    Math Score:  <input type="text" name="math_score"></br>
+
+        <input type=submit value=Submit>
+   </form>
+    <h2>Prediction: {{ predict }}</h2>
+    <p>Value indicates what group you are sorted into based on your scores.</p>
+    <p>There are 5 groups, coded as follows: </p>
+    <ul>
+        <li>0 = Group 0</li>
+        <li>1 = Group 1</li>
+        <li>2 = Group 2</li>
+        <li>3 = Group 3</li>
+        <li>4 = Group 4</li>
+      </ul>  
+</body>
+</html>
